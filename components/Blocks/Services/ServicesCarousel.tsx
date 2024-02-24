@@ -43,7 +43,7 @@ const ServicesCarousel = ({
 							todays_available_schedule={
 								"20 seats available "
 							}
-							price={`Rs ${service.price}`}
+							price={`̥₹ ${service.price}`}
 							ratings={0}
 						/>
 					);

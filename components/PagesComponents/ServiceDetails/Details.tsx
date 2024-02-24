@@ -37,7 +37,7 @@ const FullDescription = ({
 
 				<div className="flex items-center mt-4 justify-between gap-6 w-full">
 					<Title styles=" text-green font-medium  ">
-						${service_details?.price}
+						₹{service_details?.price}
 					</Title>
 					<Rating current_value={3} />
 				</div>

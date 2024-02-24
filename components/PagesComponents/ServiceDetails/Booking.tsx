@@ -196,7 +196,7 @@ const Booking = ({
 								Service Charge
 							</Title>
 							<Title styles="    ">
-								$10
+								₹10
 							</Title>
 						</div>
 						<div className="flex items-center justify-between gap-2">
@@ -204,7 +204,7 @@ const Booking = ({
 								Estimated Total
 							</Title>
 							<Title styles="    ">
-								$
+								₹
 								{service_details.price +
 									10}
 							</Title>
