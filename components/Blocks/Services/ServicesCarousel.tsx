@@ -23,7 +23,7 @@ const ServicesCarousel = ({
 				</Heading1>
 
 				<Title styles=" text-center">
-					Experience beauty bliss at TeleCare. From
+					Experience beauty bliss at JustLook. From
 					hair styling to facials, we offer a variety
 					of services designed to enhance your unique
 					charm and leave you feeling refreshed.
