@@ -10,6 +10,26 @@ import { useEffect } from "react";
 import { BlogPost, Category, Service } from "@/types/CommonTypes";
 import CategoriesListCarousel from "@/components/Blocks/Catgory/Category";
 import DedicatedSection from "@/components/Blocks/FetauresCards/DedicatedSection";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/services/firebaseConfig";
+
+async function getPosts() {
+	const allposts: any[] = [];
+	try {
+	  console.log('Fetching posts...');
+	  const querySnapshot = await getDocs(collection(db, "services"));
+	  console.log("Query snapshot:", querySnapshot); // Debugging
+	  querySnapshot.forEach((doc) => {
+		console.log(doc.id, " => ", doc.data());
+		allposts.push(doc.data());
+	  });
+	  console.log("All posts:", allposts); // Debugging
+	} catch (error) {
+	  console.error("Error fetching posts:", error);
+	}
+	return allposts;
+  };
+  
 
 const HomePage = ({
 	categories,
@@ -20,6 +40,9 @@ const HomePage = ({
 	blogs: BlogPost[];
 	latest_services: Service[];
 }) => {
+
+	const post= getPosts();
+	console.log(post);
 	return (
 		<div className="">
 			<HeroSection />

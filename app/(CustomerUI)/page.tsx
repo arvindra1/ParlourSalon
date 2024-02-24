@@ -21,16 +21,8 @@ export const metadata: Metadata = {
 	],
 };
 
-const getPosts = async () => {
-	const allposts:any[] = [];
-	const querySnapshot = await getDocs(collection(db, "blogs"));
-  
-	querySnapshot.forEach((doc) => {
-	  allposts.push(doc.data());
-	});
-  
-	return allposts;
-  };
+
+
 
 // Get Categories
 async function getCategories() {
@@ -74,11 +66,11 @@ async function getBlogs() {
 	return res.json();
 }
 
+
 export default async function Home() {
 	const { data: categories } = await getCategories();
 	const { data: latest_services } = await getServices();
 	const { data: blogs } = await getBlogs();
-
 	return (
 		<>
 			<HomePage

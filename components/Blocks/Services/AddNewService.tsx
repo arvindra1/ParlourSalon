@@ -15,6 +15,8 @@ import {
 import Heading5 from "@/components/ui/Text/Headers/Heading5";
 import { useAppSelector } from "@/hooks/Redux";
 import { useAddServiceMutation } from "@/redux/features/service/serviceApi";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "@/services/firebaseConfig";
 
 const AddNewService = ({
 	categories_list,
@@ -54,6 +56,7 @@ const AddNewService = ({
 		category_id: "",
 		is_available: true,
 	});
+	const [isloading, setisloading] = useState(false);
 
 	// const current value
 	const current_value = (
@@ -75,7 +78,15 @@ const AddNewService = ({
 	//
 
 	const formSubmitHandler = async () => {
-		addService({ ...serviceForm, price: Number(serviceForm.price) });
+		try {
+			setisloading(true);
+			await addDoc(collection(db, "services"), { ...serviceForm, price: Number(serviceForm.price) });
+			setisloading(false);
+		} catch (err) {
+			console.log(err);
+		}
+
+		// addService({ ...serviceForm, price: Number(serviceForm.price) });
 	};
 
 	useEffect(() => {
@@ -116,9 +127,9 @@ const AddNewService = ({
 			<div className=" w-full mt-5">
 				<Form
 					button_title="Save new service"
-					is_loading={isLoading}
+					is_loading={isloading}
 					button_icon={
-						isLoading
+						isloading
 							? ICONS.button_loading_icon
 							: ""
 					}
