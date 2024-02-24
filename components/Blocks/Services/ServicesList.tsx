@@ -17,7 +17,7 @@ const ServicesList = ({ services_data }: { services_data: any }) => {
 						title={service.name}
 						url={`/services/${service.id}`}
 						time={service.duration}
-						price={`$ ${service.price}`}
+						price={`₹ ${service.price}`}
 						todays_available_schedule={`${
 							service?.schedules?.length ?? 0
 						} schedule  available today `}

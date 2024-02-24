@@ -21,7 +21,7 @@ const ServiceCardListType = ({
 	time,
 	todays_available_schedule,
 	card_style,
-	price = "$0",
+	price = "₹0",
 }: {
 	image: string;
 	title: string;
@@ -57,7 +57,7 @@ const ServiceCardListType = ({
 					<Title>{`${time}`}</Title>
 				</div>
 			</div>
-			<Title styles="  text-medium text-green ">${price}</Title>
+			<Title styles="  text-medium text-green ">₹{price}</Title>
 		</div>
 	);
 };
