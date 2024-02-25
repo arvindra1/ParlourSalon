@@ -80,7 +80,8 @@ const UploadImage = ({ user_file_length }: { user_file_length: number }) => {
 							file,
 							file.name
 						);
-						addFile(formdata);
+						// addFile(formdata);
+						
 					}
 				}}
 			/>

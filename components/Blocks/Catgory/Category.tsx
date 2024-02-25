@@ -10,7 +10,7 @@ const CategoriesListCarousel = ({ categories }: { categories: Category[] }) => {
 		<div>
 			{/* Title */}
 			<Heading1 styles=" font-special ">
-				Tele Care Spotlight
+				JustLook Spotlight
 			</Heading1>
 
 			{/* Desc */}
